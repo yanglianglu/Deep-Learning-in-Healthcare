@@ -19,34 +19,34 @@ When comparing the performance of each model between the original and the reprod
 
 1. **Age and sex MLP**
    - **Original**: 0.696 AUC-ROC
-   - **Reproduced**: 0.506094 AUC
-   - The original model performs significantly better than the reproduced version, which only slightly performs above random chance.
+   - **Reproduced**: 0.632 AUC
+   - The original model performs better than the reproduced version.
 
 2. **Age, sex, family history MLP**
    - **Original**: 0.710 AUC-ROC
-   - **Reproduced**: 0.544916 AUC
-   - Including family history data enhances performance in both cases. Nevertheless, the improvement is more noticeable in the original version, which could imply that the original implementation may have used family history data more effectively or that there were discrepancies in the reproduced version.
+   - **Reproduced**: 0.770 AUC
+   - Including family history data enhances performance in both cases. Nevertheless, the improvement is more noticeable in the reproduced version, which might due to seeding.
 
 3. **Age, sex, graph connectivity MLP**
    - **Original**: 0.696 AUC-ROC
-   - **Reproduced**: 0.582163 AUC
-   - It is interesting to note that the original study did not demonstrate any improvement with the inclusion of graph connectivity over the age and sex model. However, the replicated results show a significant performance boost.
+   - **Reproduced**: 0.770 AUC
+   - With the inclusion of graph connectivity over the age and sex model, both case does not demonstrate any improvement.
 
 4. **Age, sex, and longitudinal EHR data LSTM**
    - **Original**: 0.763 AUC-ROC
-   - **Reproduced**: 0.521184 AUC
+   - **Reproduced**: 0.643 AUC
    - The original study found that the use of longitudinal EHR data resulted in a significant improvement in performance. However, the reproduced version of the study showed only a slight improvement over the age and sex model. This difference in results could be attributed to the training process of the LSTM models.
 
 5. **Age, sex, family history, and longitudinal EHR data LSTM**
    - **Original**: 0.771 AUC-ROC
-   - **Reproduced**: 0.545967 AUC
+   - **Reproduced**: 0.768 AUC
    - Combining family history with longitudinal EHR data in an LSTM framework seems to yield better results than using either alone. The original model shows a greater improvement.
 
 6. **Graph model, with longitudinal data**
    - **Original**: 0.775 AUC-ROC
-   - **Reproduced**: 0.632392 AUC
-   - The graph model incorporating longitudinal data achieves the highest performance in both the original and reproduced studies, underscoring the model's robustness. However, the reproduced version's performance is notably lower.
-
+   - **Reproduced**: 0.796 AUC
+   - The graph model incorporating longitudinal data achieves the highest performance in both the original and reproduced studies, underscoring the model's robustness. However, the original version's performance is notably lower.
+     
 - The ablation study trend suggests that each additional data type, such as family history, graph connectivity, and longitudinal EHR data, contributes incrementally to the model's predictive power. This observation is consistent with the original paper's claims and is supported by the reproduced results, albeit to varying degrees.
 
 - Both the original and reproduced studies indicate that models utilizing more sophisticated data representations, particularly those using graph structures, tend to perform better. Although there are differences in the exact performance metrics, such as the poor performance of LSTM in the reproduced version, the overall trend remains similar. This underscores the importance of graph-based models for complex data integration tasks, such as those involving medical histories and familial relationships, as suggested by the original paper.
