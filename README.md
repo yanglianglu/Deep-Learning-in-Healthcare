@@ -2,6 +2,8 @@
 ## Setting Up Environment
 1. Open https://github.com/yanglianglu/Deep-Learning-in-Healthcare/blob/main/DL4H_Team_0.ipynb in Google Colab
 2. Check python version and dependencies under Methodology - Environment section
+3. pip install -r requirements.txt
+
 ## Understanding the Data
 1. Run code under Data Section for visualization
 2. Run code under Data Preprocessing and Data Loading to prepare data
